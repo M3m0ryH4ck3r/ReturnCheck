@@ -8,7 +8,7 @@ A working Return Check bypass. Look down below for Information and a Bypass for 
 
 Where is the Return Check located? It is primary located in ROBLOX's Lua C Functions. Not all Lua C Functions found in ROBLOX have the Return Check. The Return Check's Signature is: 72 ?? A1 ?? ?? ?? ?? 8B just go to IDA, Search->Sequence Of Bytes.
 
-This changes a JB instruction into a JMP, therefore allowing to call the function without client disconnection. But ROBLOX has a Memory Check! ROBLOX's Memory Check takes a while to protect and scan for any changes made to Memory. We can quickly make the modifications and restore it before the Memory Check can detect the changes.
+This changes a JB instruction into a JMP, therefore allowing to call the function without client disconnection. But ROBLOX has a Memory Check! ROBLOX's Memory Check takes a while to protect and scan for any changes made to Memory. We can quickly make the modifications and restore it before the Memory Check can detect the changes, this means we won't shutdown since the Memory Check can take a while.
 
 # Credits
 
