@@ -27,7 +27,7 @@ void Unprotect(DWORD Address, int RetNum)
 		if (AddressOPCode == 0x72) /* Checks if the address is a JB. */
 		{
 			char AddressSecondOPCode = *(char*)(Function + 0x12);
-			if (AddressSecondOPCode == 0x72) /* Checks if the SecondAddress's OPCode is a JB. */
+			if (AddressSecondOPCode == 0x72)
 			{
 				WriteProcessMemory(GetCurrentProcess(), *(LPVOID*)&Function, "\xEB", 1, NULL);
 				i++;
@@ -45,7 +45,7 @@ void Protect(DWORD Address, int RetNum)
 		if (AddressOPCode == 0xEB) /* Checks if the Address is a JMP. */
 		{
 			char AddressSecondOPCode = *(char*)(Function + 0x12);
-			if (AddressSecondOPCode == 0x72)
+			if (AddressSecondOPCode == 0xEB)
 			{
 				WriteProcessMemory(GetCurrentProcess(), *(LPVOID*)&Function, "\x72", 1, NULL);
 				i++;
