@@ -24,7 +24,7 @@ void Unprotect(DWORD Address, int RetNum)
 	for (int i = 0; i < RetNum; Function++)
 	{
 		char AddressOPCode = *(char*)Function;
-		if (AddressOPCode == 0x72) /* Checks if it is a JB. */
+		if (AddressOPCode == 0x72) /* Checks if the address is a JB. */
 		{
 			char AddressSecondOPCode = *(char*)(Function + 0x12);
 			if (AddressSecondOPCode == 0x72) /* Checks if the SecondAddress's OPCode is a JB. */
